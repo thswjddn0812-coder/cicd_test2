@@ -9,8 +9,8 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
-  @Get("/gelato")
+  @Get('/gelato')
   getGelato(): string {
-    return "젤라또 4시에 오픈함 ㅅㄱㄱ";
+    return '젤라또 4시에 오픈함 ㅅㄱㄱ';
   }
 }
