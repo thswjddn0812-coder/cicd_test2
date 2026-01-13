@@ -6,7 +6,10 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "build": "nest build",
+    "start": "nest start",
     "lint": "eslint .",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "test": "jest --coverage"
   },
   "dependencies": {
