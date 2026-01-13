@@ -6,15 +6,21 @@ import { Student } from './entities/student.entity';
 
 describe('StudentsController', () => {
   let controller: StudentsController;
-  let mockRepo:any;
+  let mockRepo: {
+    findOne: jest.Mock;
+  };
   beforeEach(async () => {
-    mockRepo={
-      findOne:jest.fn(),
+    mockRepo = {
+      findOne: jest.fn(),
     };
     const module: TestingModule = await Test.createTestingModule({
       controllers: [StudentsController],
-      providers: [StudentsService,
-        {provide:getRepositoryToken(Student),useValue:mockRepo},
+      providers: [
+        StudentsService,
+        {
+          provide: getRepositoryToken(Student),
+          useValue: mockRepo,
+        },
       ],
     }).compile();
 

@@ -24,8 +24,8 @@ export class StudentsService {
     return `학생${id}`;
   }
 
-  update(_id: number, _updateStudentDto: UpdateStudentDto) {
-    return `This action updates a #${_id} student`;
+  update(id: number, _updateStudentDto: UpdateStudentDto) {
+    return `This action updates a #${id} student`;
   }
 
   remove(id: number) {

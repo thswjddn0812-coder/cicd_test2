@@ -6,7 +6,10 @@ import fc from 'fast-check';
 
 describe('StudentsService', () => {
   let service: StudentsService;
-  let mockRepo: any;
+  let mockRepo: {
+    create: jest.Mock;
+    save: jest.Mock;
+  };
   //테스트하기 전의 세팅 작업업
   beforeEach(async () => {
     mockRepo = {
