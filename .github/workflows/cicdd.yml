@@ -18,8 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run:  npm install -g @railway/cli
-      - run: railway up --service=cicdtest2
+      - name: Deploy to Railway
+        uses: bervProject/railway-deploy@main
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        with:
+          service: cicdtest2
       - run: echo "레일웨이 배포 완료"
