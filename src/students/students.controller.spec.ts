@@ -14,7 +14,7 @@ describe('StudentsController', () => {
     controller = module.get<StudentsController>(StudentsController);
   });
 
-  it("학생 findOne get",()=>{
-    expect(controller.findOne("10")).toBe("학생10");
-  })
+  it('학생 findOne get', () => {
+    expect(controller.findOne('10')).toBe('학생10');
+  });
 });

@@ -7,9 +7,12 @@ import { Student } from './entities/student.entity';
 
 @Injectable()
 export class StudentsService {
-  constructor(@InjectRepository(Student) private studentRepository: Repository<Student>) {}
+  constructor(
+    @InjectRepository(Student)
+    private studentRepository: Repository<Student>,
+  ) {}
   create(createStudentDto: CreateStudentDto) {
-    const student=this.studentRepository.create(createStudentDto);
+    const student = this.studentRepository.create(createStudentDto);
     return this.studentRepository.save(student);
   }
 
@@ -21,8 +24,8 @@ export class StudentsService {
     return `학생${id}`;
   }
 
-  update(id: number, updateStudentDto: UpdateStudentDto) {
-    return `This action updates a #${id} student`;
+  update(_id: number, _updateStudentDto: UpdateStudentDto) {
+    return `This action updates a #${_id} student`;
   }
 
   remove(id: number) {
